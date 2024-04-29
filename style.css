@@ -1,0 +1,148 @@
+:root {
+    --primary: #005151;
+    --secondary: #b7d9d9;
+    --light: #ffffff;
+    --dark: #000000;
+    --hero: #6AB0B0;
+    --lilac: #C8A2C8;
+}
+
+section {
+    padding: 50px;
+}
+
+.navbar {
+    height: 70px;
+
+    &.sticky {
+        background-color: var(--hero) !important;
+    }
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+    color: var(--light);
+}
+
+.divider {
+    height: 50px;
+    padding: 0px;
+
+    &.top-right {
+        border-bottom: 25px solid var(--primary);
+        border-right: 50vw solid var(--primary);
+        border-top: 25px solid var(--light);
+        border-left: 50vw solid var(--light)
+    }
+
+    &.top-left {
+        border-top: 25px solid var(--primary);
+        border-left: 50vw solid var(--primary);
+        border-bottom: 25px solid var(--light);
+        border-right: 50vw solid var(--light)
+    }
+}
+
+.logo {
+    height: 30px;
+}
+
+.hero {
+    .carousel-item {
+        height: calc(100vh - 70px);
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+#carousel-team {
+    .carousel-item {
+        padding: 0 50px;
+
+        .card {
+            margin: 50px 20px;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        }
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+        filter: invert(100%);
+    }
+}
+
+.card-section .card {
+    margin: 0 auto;
+    width: 75vw;
+    border-radius: 10px;
+    grid-template-columns: 0.5fr 1.5fr;
+    height: fit-content;
+    max-height: 50vh;
+    color: var(--light);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border: none;
+
+    .card-img {
+        flex-basis: 40%;
+        overflow: hidden;
+        border-radius: 0;
+        border: none;
+
+        img {
+            width: auto;
+            height: 100%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    }
+
+    .card-content {
+        padding: 20px;
+        flex-basis: 60%;
+    }
+}
+
+.stats {
+    width: 70vw;
+    margin: 70px auto;
+    gap: 50px;
+
+    .stats-item {
+        text-align: center;
+        gap: 20px;
+
+        .stats-img img {
+            height: 80px;
+            width: auto;
+        }
+
+        .stats-content {
+            text-transform: uppercase;
+        }
+    }
+}
+
+footer {
+    padding: 50px;
+    background-color: lightgrey;
+
+    .socials {
+        gap: 15px;
+        list-style: none;
+        margin: 0 auto;
+        width: fit-content;
+
+        img {
+            height: 50px;
+            width: auto;
+
+            &:hover {
+                height: 60px;
+                transform: translateY(-5px);
+            }
+        }
+    }
+}
