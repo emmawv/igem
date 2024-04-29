@@ -5,6 +5,14 @@
     --dark: #000000;
     --hero: #6AB0B0;
     --lilac: #C8A2C8;
+
+    --contrast-pink: #C7B0D3;
+    --contrast-lilac: #D7A4B3;
+    --bg-light-green: #D5DF9F;
+    --bg-green: #CBDAAF;
+    --bg-turquiose: #AFCDC8;
+    --bg-blue: #9AC3D7;
+
 }
 
 section {
@@ -15,13 +23,13 @@ section {
     height: 70px;
 
     &.sticky {
-        background-color: var(--hero) !important;
+        background-color: var(--bg-blue) !important;
     }
 }
 
 .bg-primary {
-    background-color: var(--primary) !important;
-    color: var(--light);
+    background-color: var(--bg-turquiose) !important;
+    color: var(--dark) !important;
 }
 
 .divider {
@@ -29,15 +37,15 @@ section {
     padding: 0px;
 
     &.top-right {
-        border-bottom: 25px solid var(--primary);
-        border-right: 50vw solid var(--primary);
+        border-bottom: 25px solid var(--bg-turquiose);
+        border-right: 50vw solid var(--bg-turquiose);
         border-top: 25px solid var(--light);
         border-left: 50vw solid var(--light)
     }
 
     &.top-left {
-        border-top: 25px solid var(--primary);
-        border-left: 50vw solid var(--primary);
+        border-top: 25px solid var(--bg-turquiose);
+        border-left: 50vw solid var(--bg-turquiose);
         border-bottom: 25px solid var(--light);
         border-right: 50vw solid var(--light)
     }
@@ -127,7 +135,7 @@ section {
 
 footer {
     padding: 50px;
-    background-color: lightgrey;
+    background-color: var(--bg-green);
 
     .socials {
         gap: 15px;
