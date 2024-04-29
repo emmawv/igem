@@ -155,17 +155,27 @@ section {
         .card {
             margin: 50px 20px;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+            flex-basis: 30%;
+            flex-shrink: 0;
+
+            .card-img {
+                height: 150px;
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                }
+            }
         }
     }
 
     .carousel-control-next,
     .carousel-control-prev {
         filter: invert(100%);
-    }
-
-    .card {
-        flex-basis: 30%;
-        flex-shrink: 0;
     }
 }
 
