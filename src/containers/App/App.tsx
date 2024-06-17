@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
-import { Footer, Header, Navbar, NotFound } from "../../components";
+import { Footer, Navbar, NotFound } from "../../components";
 import { getPathMapping, stringToSlug } from "../../utils";
 import { useEffect, useState } from "react";
 import { Loading } from "../../components/Loading";
@@ -10,7 +10,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const images = ['https://ibb.co/WB5cKfT']
+    const images = ['src/assets/images/interfaz_web_2.png']
 
     cacheImages(images)
   }, [])
@@ -54,6 +54,14 @@ const App = () => {
 
       {/* Header and PageContent */}
       <Routes>
+        <Route
+          path="*"
+          element={
+            <>
+              <NotFound />
+            </>
+          }
+        />
         {Object.entries(pathMapping).map(
           ([path, { component: Component }]) => (
             <Route
@@ -73,18 +81,6 @@ const App = () => {
             />
           ),
         )}
-        <Route
-          path="*"
-          element={
-            <>
-              <Header
-                title="Not Found"
-                lead="The requested URL was not found on this server."
-              />
-              <NotFound />
-            </>
-          }
-        />
       </Routes>
 
       {/* Footer */}
