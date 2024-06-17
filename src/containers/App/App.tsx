@@ -10,7 +10,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const images = ['src/assets/images/interfaz_web_2.png']
+    const images = ['https://ibb.co/WB5cKfT']
 
     cacheImages(images)
   }, [])
