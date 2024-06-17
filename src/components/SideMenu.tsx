@@ -21,7 +21,7 @@ export const SideMenu: FC<SideMenuProps> = ({ items }) => {
           setIsActive(activeElement);
         }
       });
-    }, {threshold: [0.3]});
+    }, {threshold: [0.4]});
 
     [...targetSections].forEach((section) => {
       observer.observe(section);
