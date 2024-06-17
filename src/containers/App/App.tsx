@@ -52,16 +52,8 @@ const App = () => {
       {/* Navigation */}
       <Navbar />
 
-      {/* Header and PageContent */}
+      {/* PageContent */}
       <Routes>
-        <Route
-          path="*"
-          element={
-            <>
-              <NotFound />
-            </>
-          }
-        />
         {Object.entries(pathMapping).map(
           ([path, { component: Component }]) => (
             <Route
@@ -81,6 +73,14 @@ const App = () => {
             />
           ),
         )}
+        <Route
+          path="*"
+          element={
+            <>
+              <NotFound />
+            </>
+          }
+        />
       </Routes>
 
       {/* Footer */}

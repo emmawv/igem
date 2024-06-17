@@ -116,9 +116,9 @@ h4 {
     &:active,
     &:focus,
     &.btn-check:checked+.btn,
-    &.btn.active,
-    &.btn.show,
-    &.btn:first-child:active,
+    &.active,
+    &.show,
+    &:first-child:active,
     &:not(.btn-check)+.btn:active {
       background-color: rgb(255, 255, 255, 0.5);
       border: 1px solid white;
