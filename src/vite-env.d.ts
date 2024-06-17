@@ -6,6 +6,6 @@ interface ImportMetaEnv {
   readonly VITE_TEAM_YEAR: string = '2024';
 }
 
-interface ImportMeta {
+export interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
