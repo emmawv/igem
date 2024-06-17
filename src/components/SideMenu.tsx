@@ -10,6 +10,8 @@ export const SideMenu: FC<SideMenuProps> = ({ items }) => {
   const [isActive, setIsActive] = useState(menuItems[0])
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+    
     const targetSections = document.getElementsByClassName('description-section');
 
     const observer = new IntersectionObserver((entries) => {
@@ -19,7 +21,7 @@ export const SideMenu: FC<SideMenuProps> = ({ items }) => {
           setIsActive(activeElement);
         }
       });
-    }, {threshold: [0.2, 0.7]});
+    });
 
     [...targetSections].forEach((section) => {
       observer.observe(section);

@@ -74,13 +74,13 @@ h4 {
 }
 
 .page-container {
-  background: center / cover no-repeat url('src/assets/images/interfaz_web_2.png');
+  background: center / cover no-repeat url('https://i.ibb.co/QYQ6mM5/interfaz-web-2.png');
   height: 100%;
   width: 100vw;
 }
 
 .page-hero {
-  background-image: url('src/assets/images/plastic.jpg');
+  background-image: url('https://i.ibb.co/cgsC8TW/plastic.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
