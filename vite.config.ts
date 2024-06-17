@@ -6,7 +6,7 @@ import { stringToSlug } from "./src/utils";
 export default () => {
   const env = loadEnv("dev", process.cwd());
   return defineConfig({
-    base: '/igem/',
+    base: './',
     plugins: [react()],
   });
 };
