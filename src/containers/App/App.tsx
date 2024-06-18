@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import { Footer, Navbar, NotFound } from "../../components";
-import { getPathMapping } from "../../utils";
+import { getPathMapping, stringToSlug } from "../../utils";
 import { useEffect, useState } from "react";
 import { Loading } from "../../components/Loading";
 
@@ -36,7 +36,7 @@ const App = () => {
   const pathMapping = getPathMapping();
   const currentPath =
     location.pathname
-      .split('igem')
+      .split(`${stringToSlug(import.meta.env.VITE_TEAM_NAME)}`)
       .pop() || "/";
 
   // Set Page Title
@@ -77,7 +77,7 @@ const App = () => {
           path="*"
           element={
             <>
-              <NotFound />
+              <div className="page-container"><NotFound /></div>
             </>
           }
         />
