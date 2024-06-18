@@ -1,17 +1,38 @@
-image: node:16.5.0
-pages:
-  stage: deploy
+image: node:18.20.0
+
+build:
+  stage: build
   cache:
-    key:
-      files:
-        - package-lock.json
-      prefix: npm
-    paths:
-      - node_modules/
+    - key:
+        files:
+          - yarn.lock
+      paths:
+        - .yarn-cache/
+  before_script:
+    - echo 'yarn-offline-mirror ".yarn-cache/"' >> .yarnrc
+    - echo 'yarn-offline-mirror-pruning true' >> .yarnrc
+    - yarn install --frozen-lockfile
   script:
-    - npm install
-    - npm run build
+    - yarn build
+  rules:
+    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
+
+pages:
+  stage: build
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      paths:
+        - .yarn-cache/
+  before_script:
+    - echo 'yarn-offline-mirror ".yarn-cache/"' >> .yarnrc
+    - echo 'yarn-offline-mirror-pruning true' >> .yarnrc
+    - yarn install --frozen-lockfile
+  script:
+    - yarn build
     - cp -a dist/. public/
+    - echo '/* /index.html 200' > public/_redirects
   artifacts:
     paths:
       - public
